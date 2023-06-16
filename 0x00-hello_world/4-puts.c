@@ -1,11 +1,7 @@
-/*
- * File: 4-puts.c
- * Auth: Nyaribo Victor <nyaribovic@gmail.com>
- */
 
 #include <stdio.h>
-
 /**
+ * main - Prints
  *
  * Return: Always 0.
  */
