@@ -1,10 +1,9 @@
 /*
  * File: 2-print_alphabet_x10.c
- * Auth: Nyaribo
+ * Auth: Nyari
  */
 
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 
 /**
  * print_alphabet_x10 - Prints 10 times the alphabet, in lowercase.
