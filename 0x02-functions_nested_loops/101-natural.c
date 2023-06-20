@@ -3,7 +3,7 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - The program computes and prints the sum of 

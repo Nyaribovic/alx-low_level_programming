@@ -3,7 +3,7 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Finds and prints the first 98 Fibonacci numbers, 

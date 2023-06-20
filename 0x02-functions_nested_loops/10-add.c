@@ -3,7 +3,7 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  *  The function adds two integers.

@@ -3,7 +3,7 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  * The function prints every minute of the day of 

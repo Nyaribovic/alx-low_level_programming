@@ -3,7 +3,7 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Prints the sum of the even-valued terms 

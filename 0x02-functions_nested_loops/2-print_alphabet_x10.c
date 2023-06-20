@@ -3,7 +3,6 @@
  * Auth: Nyaribo
  */
 
-#include <stdio.h>
 #include <main.h>
 
 /**
