@@ -2,25 +2,34 @@
 #include <stdio.hii> 
 
 /**
- * leet - encode string to 1337
- * @s: string to encode
- * Return: pointer to encoded string
- */
+  * leet - Encodes a string into 1337
+  * @s: The string to encode
+  *
+  * Return: The encoded string
+  */
 char *leet(char *s)
 {
-	char *r = s;
-	char a[] = { 'a', 'e', 'o', 't', 'l' };
-	char n[] = { 4, 3, 0, 7, 1 };
-	int i = 0;
+	int a = 0, b = 0, l = 5;
+	char r[5] = {'A', 'E', 'O', 'T', 'L'};
+	char n[5] = {'4', '3', '0', '7', '1'};
 
-	while (*s)
+	while (s[a])
 	{
-		for (i = 0; i < 5; i++)
+		b = 0;
+
+		while (b < l)
 		{
-			if (*s == a[i] || *s == a[i] - 32)
-				*s = n[i] + '0';
+			if (s[a] == r[b] || s[a] - 32 == r[b])
+			{
+				s[a] = n[b];
+			}
+
+			b++;
 		}
-		s++;
+
+		a++;
 	}
-	return (r);
+
+	return (s);
 }
+
