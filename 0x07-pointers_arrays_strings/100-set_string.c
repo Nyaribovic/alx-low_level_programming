@@ -7,5 +7,15 @@
  */
 void set_string(char **s, char *to)
 {
-	*s = to;
+	// Check if the pointer is already pointing to a valid memory location
+    if (*s != NULL) {
+        // Deallocate the previously allocated memory
+        free(*s);
+    }
+
+    // Allocate memory for the new string
+    *s = (char *)malloc((strlen(to) + 1) * sizeof(char));
+
+    // Copy the contents of 'to' to the newly allocated memory
+    strcpy(*s, to);
 }
