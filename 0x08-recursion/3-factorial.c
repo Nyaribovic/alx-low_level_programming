@@ -2,24 +2,21 @@
 #include <stdio.h>
 
 /**
- * factorial - Returns the factorial of a given number.
- * @n: The number to find the factorial of.
+ * factorial - Calculates the factorial of a given number
+ * @n: The number for which factorial is calculated
  *
- * Return: If n > 0 - the factorial of n.
- *         If n < 0 - 1 to indicate an error.
+ * Return: Factorial of n, or -1 if n is negative
  */
 int factorial(int n)
 {
-    if (n < 0) { 
+	/* Base case: factorial of 0 is 1 */
+	if (n == 0)
+		return 1;
 
-        return -1; 
-    }
+	/* Error case: n is negative */
+	if (n < 0)
+		return -1;
 
-    if (n == 0) {
-       
-	    return 1; 
-    }
-
-    return n * factorial(n - 1);  
+	/* Recursive case: calculate factorial */
+	return n * factorial(n - 1);
 }
-
