@@ -2,29 +2,25 @@
 #include <stdio.h>
 
 /**
- * @n: The number to be checked.
- * @divivisor: The divisor.
+ * is_prime_number - Checks if a number is prime
+ * @n: The number to be checked
  *
- * Return: If the number is divisible - 0.
- *         If the number is not divisible - 1.
+ * Return: 1 if prime, 0 otherwise
  */
-int is_prime_helper(int n, int divisor) {
-    if (n <= 1) {
-        return 0;  // Base case: Numbers less than or equal to 1 are not prime
-    }
+int is_prime_number(int n)
+{
+	int i;
 
-    if (divisor * divisor > n) {
-        return 1;  // Base case: Found a prime number
-    }
+	/* Edge cases: 0, 1, and negative numbers are not prime */
+	if (n <= 1)
+		return 0;
 
-    if (n % divisor == 0) {
-        return 0;  // Base case: Found a divisor, not a prime number
-    }
+	/* Check for divisibility by numbers from 2 to sqrt(n) */
+	for (i = 2; i * i <= n; i++)
+	{
+		if (n % i == 0)
+			return 0; /* Not prime if divisible by i */
+	}
 
-    return is_prime_helper(n, divisor + 1);  // Recurse with the next divisor
+	return 1; /* Prime number */
 }
-
-int is_prime_number(int n) {
-    return is_prime_helper(n, 2);  // Call helper function with divisor starting from 2
-}
-

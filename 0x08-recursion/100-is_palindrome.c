@@ -1,39 +1,30 @@
 #include "main.h"
 #include <stdio.h>
-#include <string.h>
 
 /**
- * find_strlen - Returns the length of a string.
- * @s: The string to be measured.
+ * is_palindrome - Checks if a string is a palindrome
+ * @s: The string to be checked
  *
- * Return: The length of the string.
+ * Return: 1 if palindrome, 0 otherwise
  */
-int is_palindrome(char *s) {
-    int len = strlen(s);
-    int start = 0;
-    int end = len - 1;
+int is_palindrome(char *s)
+{
+	int len, i;
 
-    while (start < end) {
-        if (s[start] != s[end]) {
-            return 0;  // Not a palindrome
-        }
+	/* Calculate the length of the string */
+	for (len = 0; s[len] != '\0'; len++)
+		;
 
-        start++;
-        end--;
-    }
+	/* Empty string is a palindrome */
+	if (len == 0)
+		return 1;
 
-    return 1;  // Palindrome
-}
+	/* Check if the string is a palindrome */
+	for (i = 0; i < len / 2; i++)
+	{
+		if (s[i] != s[len - 1 - i])
+			return 0; /* Not a palindrome */
+	}
 
-int main() {
-    char str[] = s;
-    int result = is_palindrome(str);
-
-    if (result == 1) {
-        printf("%s is a palindrome\n", str);
-    } else {
-        printf("%s is not a palindrome\n", str);
-    }
-
-    return 0;
+	return 1; /* Palindrome */
 }
