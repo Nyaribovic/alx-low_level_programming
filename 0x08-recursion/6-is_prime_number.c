@@ -1,26 +1,44 @@
 #include "main.h"
 #include <stdio.h>
 
+int is_divisible(int num, int div);
+int is_prime_number(int n);
+
 /**
- * is_prime_number - Checks if a number is prime
- * @n: The number to be checked
+ * is_divisible - Checks if a number is divisible.
+ * @num: The number to be checked.
+ * @div: The divisor.
  *
- * Return: 1 if prime, 0 otherwise
+ * Return: If the number is divisible - 0.
+ *         If the number is not divisible - 1.
+ */
+int is_divisible(int num, int div)
+{
+	if (num % div == 0)
+		return (0);
+
+	if (div == num / 2)
+		return (1);
+
+	return (is_divisible(num, div + 1));
+}
+
+/**
+ * is_prime_number - Checks if a number is prime.
+ * @n: The number to be checked.
+ *
+ * Return: If the integer is not prime - 0.
+ *         If the number is prime - 1.
  */
 int is_prime_number(int n)
 {
-	int i;
+	int div = 2;
 
-	/* Edge cases: 0, 1, and negative numbers are not prime */
 	if (n <= 1)
-		return 0;
+		return (0);
 
-	/* Check for divisibility by numbers from 2 to sqrt(n) */
-	for (i = 2; i * i <= n; i++)
-	{
-		if (n % i == 0)
-			return 0; /* Not prime if divisible by i */
-	}
+	if (n >= 2 && n <= 3)
+		return (1);
 
-	return 1; /* Prime number */
+	return (is_divisible(n, div));
 }
