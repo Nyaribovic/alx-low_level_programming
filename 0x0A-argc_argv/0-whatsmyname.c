@@ -8,12 +8,9 @@
  *
  * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[]) 
+int main(int argc __attribute__((unused)), char *argv[])
 {
-    (void)argc; /* Suppress unused parameter warning*/
+	printf("%s\n", *argv);
 
-    char *program_name = argv[0];
-    printf("%s\n", program_name);
-
-    return (0);
+	return (0);
 }

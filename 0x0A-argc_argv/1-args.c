@@ -8,11 +8,8 @@
  *
  * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-    (void)argv; /* Suppress unused parameter warning*/
-
-    printf("%d\n", argc - 1);
-
-    return (0);
+	printf("%d\n", argc - 1);
+	return (0);
 }
