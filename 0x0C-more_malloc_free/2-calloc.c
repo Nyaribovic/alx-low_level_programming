@@ -12,22 +12,22 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-    void *ptr;
-    unsigned int total_size;
+	void *mem;
+	char *filler;
+	unsigned int index;
 
-    if (nmemb == 0 || size == 0)
-        return (NULL);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 
-    total_size = nmemb * size;
+	mem = malloc(size * nmemb);
 
-    ptr = malloc(total_size);
-    if (ptr == NULL)
-        return (NULL);
+	if (mem == NULL)
+		return (NULL);
 
-    char *char_ptr = ptr;
-    unsigned int i;
-    for (i = 0; i < total_size; i++)
-        char_ptr[i] = '\0';
+	filler = mem;
 
-    return (ptr);
+	for (index = 0; index < (size * nmemb); index++)
+		filler[index] = '\0';
+
+	return (mem);
 }
