@@ -3,8 +3,7 @@
  * Auth: Bundi Victor
  */
 
-#include "main.h"
-#include <string.h>
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -104,11 +103,12 @@ int main(int argc, char *argv[])
     if (bytes_read != sizeof(header))
         display_error("Error: Cannot read ELF header");
 
-    if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0)
+    if (header.e_ident[EI_MAG0] != ELFMAG0 || header.e_ident[EI_MAG1] != ELFMAG1 ||
+        header.e_ident[EI_MAG2] != ELFMAG2 || header.e_ident[EI_MAG3] != ELFMAG3)
         display_error("Error: Not an ELF file");
 
     display_elf_header_info(&header);
 
     close(fd);
-    return 0;
+    return (0);
 }
