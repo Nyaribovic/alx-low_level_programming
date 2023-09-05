@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 /**
- * create_file - Creates a file with the specified permissions and writes content.
+ * create_file - Creates a file with the specified permissions and writes.
  * @filename: The name of the file to create.
  * @text_content: A NULL-terminated string to write to the file.
  *
