@@ -11,18 +11,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	if (n == 0)
+	int bit_count = sizeof(n) * 8;
+	int leading_zeros = 1;
+
+	while (bit_count--)
 	{
+		if (n & (1UL << bit_count))
+		{
+			leading_zeros = 0;
+			_putchar('1');
+		}
+		else if (!leading_zeros)
+		{
+			_putchar('0');
+		}
+	}
+	if (leading_zeros)
 		_putchar('0');
-		return;
-	}
-
-	int bit_count = (sizeof(n) * 8) - 1;
-
-	while (bit_count >= 0)
-	{
-		int bit = (n >> bit_count) & 1;
-		_putchar(bit + '0');
-		bit_count--;
-	}
 }
